@@ -4,12 +4,13 @@ class Student:
     def __init__(self, name):
         self.__name = name
         self.email = "{}@gmail.com".format(self.__name)
-
-    def setName(self, name):
+    @property
+    def name(self):
+        return self.__name
+    @name.setter
+    def name(self, name):
         self.__name = name
 
-    def getName(self):
-        return self.__name
 
     def __repr__(self):
         return "Name: {} || Email: {}".format(self.__name, self.email)
